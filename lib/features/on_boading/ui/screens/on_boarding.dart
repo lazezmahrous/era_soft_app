@@ -9,6 +9,7 @@ import 'package:t_shirt/core/helpers/spacing.dart';
 
 import '../../../../core/theming/styles.dart';
 import '../widgets/on_boarding_button_widget.dart';
+import '../widgets/on_boarding_circle_background_widget.dart';
 import '../widgets/on_boarding_text_widget.dart';
 import '../widgets/on_boarding_tranier_image_widget.dart';
 
@@ -26,6 +27,7 @@ class _OnBoardingState extends State<OnBoarding> {
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: [
+            OnBoardingCircleBackgroundWidget(),
             OnBoardingTextWidget(),
             OnBoardingTranierImageWidget(),
             OnBoardingButtonWidget(),

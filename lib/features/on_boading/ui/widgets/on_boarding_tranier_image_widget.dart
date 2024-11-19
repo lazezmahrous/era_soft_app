@@ -9,11 +9,27 @@ class OnBoardingTranierImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: 0,
-      left: 0,
-      child: SizedBox(
-        width: 400.w,
-        height: 500.h,
-        child: Image.asset(AppImages.onBoardingModel),
+      // left: 0,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            child: SizedBox(
+              width: 420.w,
+              height: 500.h,
+              child: Image.asset(
+                AppImages.onBoardingLogo,
+              ),
+            ),
+          ),
+          Positioned(
+            child: SizedBox(
+              width: 400.w,
+              height: 500.h,
+              child: Image.asset(AppImages.onBoardingModel),
+            ),
+          ),
+        ],
       ),
     );
   }

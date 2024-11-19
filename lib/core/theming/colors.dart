@@ -7,6 +7,7 @@ class ColorsManager {
   }
   static const Color mainBlue = Color(0xFF247CFF);
   static const Color mainWhite = Color(0xffFCFDFD);
+  static const Color mainOrange = Color(0xfff09946);
 
   static Color gray = HexColor('#757575');
   static Color lightGray = HexColor('#FF757575');
