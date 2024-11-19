@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -17,8 +19,8 @@ class OnBoardingButtonWidget extends StatelessWidget {
     return Positioned(
       bottom: 20,
       child: Container(
-        width: 350.w,
-        height: 80.h,
+        width: 300.w,
+        height: 70.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.r),
           color: Colors.black.withOpacity(.1),
@@ -31,24 +33,24 @@ class OnBoardingButtonWidget extends StatelessWidget {
               color: Colors.black.withOpacity(0),
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 50.h),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Get Started',
-                      style: TextStyles.font20WhiteMedium,
-                    ),
-                    horizontalSpace(20),
-                    IconButton(
-                      onPressed: () {
-                        context.pushNamed(Routes.homeScreen);
-                      },
-                      icon: SvgPicture.asset(
+                child: InkWell(
+                  onTap: () {
+                    context.pushNamed(Routes.signupScreen);
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Get Started',
+                        style: TextStyles.font20WhiteMedium,
+                      ),
+                      horizontalSpace(20),
+                      SvgPicture.asset(
                         AppSvgs.angleRight,
                         color: Colors.white,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
