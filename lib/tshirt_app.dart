@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_shirt/core/routing/app_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'core/helpers/shared_pref_constans.dart';
 import 'core/routing/routers.dart';
 import 'core/theming/colors.dart';
 
@@ -21,10 +22,18 @@ class _TshirtAppState extends State<TshirtApp> {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-            fontFamily: 'HindMysuru',
-            primaryColor: ColorsManager.mainBlue,
-            scaffoldBackgroundColor: ColorsManager.mainWhite,
-          ),
+              fontFamily: 'HindMysuru',
+              primaryColor: ColorsManager.mainBlue,
+              scaffoldBackgroundColor: ColorsManager.mainWhite,
+              appBarTheme: AppBarTheme(
+                scrolledUnderElevation: null,
+                backgroundColor: ColorsManager.mainWhite,
+                iconTheme: IconThemeData(
+                  color: ColorsManager.darkBlue,
+                ),
+                elevation: null,
+                color: null,
+              )),
           locale: const Locale('en', 'EN'),
           localizationsDelegates: const [
             // S.delegate,
@@ -34,7 +43,8 @@ class _TshirtAppState extends State<TshirtApp> {
           ],
           // supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          initialRoute: Routes.onBoardingScreen,
+          initialRoute:
+              isLoggedInUser ? Routes.homeScreen : Routes.onBoardingScreen,
           onGenerateRoute: widget.appRouter.generateRoute,
         );
       },
