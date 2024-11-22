@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:t_shirt/core/helpers/extensions.dart';
+import 'package:t_shirt/core/networking/local_database/helper/hive_helper.dart';
 import 'package:t_shirt/core/routing/app_router.dart';
 
 import 'core/di/dependency_injection.dart';
@@ -15,9 +16,12 @@ void main() async {
     anonKey:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmZ3ZpcG5scmp2emRveGlpYW9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIwNDA1ODcsImV4cCI6MjA0NzYxNjU4N30.fjdmmJdJXGETlD8BwvEeKu298EKnTQttX6WKcRN8BnA',
   );
-  await setupGetit();
   await ScreenUtil.ensureScreenSize();
+  await HiveHeleper.initHive();
+
+  await setupGetit();
   await checkIfLoggedInUser();
+
   runApp(
     TshirtApp(
       appRouter: AppRouter(),
