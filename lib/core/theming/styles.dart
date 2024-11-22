@@ -4,6 +4,12 @@ import 'package:t_shirt/core/theming/colors.dart';
 import 'package:t_shirt/core/theming/font_weight_helper.dart';
 
 class TextStyles {
+  static TextStyle font32SemiBold = TextStyle(
+    fontSize: 32.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.darkBlue,
+  );
+
   static TextStyle font24BlueBold = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeightHelper.bold,
@@ -56,4 +62,35 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: Colors.white,
   );
+
+  static TextStyle font14DarkBlueMedium = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font15BlueSemiBold = TextStyle(
+    fontSize: 15.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.mainBlue,
+  );
+
+  static TextStyle font13DarkGrayRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.gray,
+  );
+
+  static TextStyle font16DarkSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    color: ColorsManager.darkBlue,
+  );
+
+  static TextStyle font13GrayRegular = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.maingray,
+  );
+
 }

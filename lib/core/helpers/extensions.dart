@@ -5,14 +5,6 @@ extension Navigation on BuildContext {
     return Navigator.of(this).pushNamed(routeName, arguments: arguments);
   }
 
-  // Future<dynamic> pushReplacementToEnterResult(int result) {
-  //   return Navigator.of(this).pushReplacement(MaterialPageRoute(
-  //     builder: (context) => EnterResultScreen(
-  //       result: result,
-  //     ),
-  //   ));
-  // }
-
   Future<dynamic> pushReplacementNamed(String routeName, {Object? arguments}) {
     return Navigator.of(this)
         .pushReplacementNamed(routeName, arguments: arguments);
@@ -25,4 +17,12 @@ extension Navigation on BuildContext {
   }
 
   void pop() => Navigator.of(this).pop();
+}
+
+extension StringExtension on String? {
+  bool isNullOrEmpty() => this == null || this == "";
+}
+
+extension ListExtension<T> on List<T>? {
+  bool isNullOrEmpty() => this == null || this!.isEmpty;
 }
