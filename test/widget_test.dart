@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:t_shirt/core/routing/app_router.dart';
 
-import 'package:t_shirt/main.dart';
 import 'package:t_shirt/tshirt_app.dart';
 
 void main() {

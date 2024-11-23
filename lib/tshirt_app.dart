@@ -44,7 +44,7 @@ class _TshirtAppState extends State<TshirtApp> {
           // supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
           initialRoute:
-              isLoggedInUser ? Routes.homeScreen : Routes.onBoardingScreen,
+              isLoggedInUser ? Routes.bottomNavBar : Routes.onBoardingScreen,
           onGenerateRoute: widget.appRouter.generateRoute,
         );
       },

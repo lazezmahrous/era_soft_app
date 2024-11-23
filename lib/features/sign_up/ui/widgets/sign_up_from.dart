@@ -6,7 +6,6 @@ import '../../../../core/constant/app_svgs.dart';
 import '../../../../core/global widgets/app_text_form_field.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/helpers/spacing.dart';
-import '../../../../core/networking/maps_services.dart';
 import '../../../../core/theming/colors.dart';
 import '../../logic/cubit/sign_up_cubit.dart';
 import 'get_address_text_field_widget.dart';

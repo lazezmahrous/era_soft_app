@@ -5,7 +5,6 @@ import 'package:t_shirt/core/theming/colors.dart';
 import 'package:t_shirt/features/sign_up/logic/cubit/sign_up_cubit.dart';
 
 import '../../../../core/constant/app_svgs.dart';
-import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/global widgets/app_text_form_field.dart';
 import '../../logic/cubit/get_address_cubit.dart';
 import 'sign_up_text_field.dart';

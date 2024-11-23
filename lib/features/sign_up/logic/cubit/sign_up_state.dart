@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/models/user_sign_up_response_body.dart';
 
 part 'sign_up_state.freezed.dart';
 
