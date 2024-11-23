@@ -12,6 +12,7 @@ class AppTextFormField extends StatelessWidget {
   final FocusNode? focusNode;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
+
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
   final String? hintText;
@@ -59,6 +60,7 @@ class AppTextFormField extends StatelessWidget {
       maxLength: maxLength,
       maxLines: maxLines,
       decoration: InputDecoration(
+        isDense: false,
         enabled: true,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
@@ -90,7 +92,9 @@ class AppTextFormField extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(10),
               )
-            : null,
+            : prefixIcon,
+        enabledBorder: enabledBorder,
+        focusedBorder: focusedBorder,
       ),
       obscureText: isObscureText ?? false,
       style: TextStyles.font16DarkSemiBold,

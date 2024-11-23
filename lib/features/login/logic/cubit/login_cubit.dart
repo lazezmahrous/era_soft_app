@@ -6,7 +6,6 @@ import 'package:t_shirt/features/login/data/repos/login_repo.dart';
 import 'package:t_shirt/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/networking/local_database/helper/hive_helper.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final LoginRepo _loginRepo;

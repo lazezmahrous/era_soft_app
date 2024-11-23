@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:t_shirt/core/di/dependency_injection.dart';
 import 'package:t_shirt/core/routing/routers.dart';
 import 'package:t_shirt/features/home/ui/screens/home_screen.dart';
+import 'package:t_shirt/features/home/ui/widgets/bottom_navbar.dart';
 import 'package:t_shirt/features/login/logic/cubit/login_cubit.dart';
 import 'package:t_shirt/features/login/ui/screens/login_screen.dart';
 
@@ -36,6 +37,10 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
+        );
+      case Routes.bottomNavBar:
+        return MaterialPageRoute(
+          builder: (context) => const BottomNavBar(),
         );
       default:
         return MaterialPageRoute(
