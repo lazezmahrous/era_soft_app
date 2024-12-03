@@ -16,57 +16,61 @@ class ShowUserInfoWifget extends StatelessWidget {
   final UserModel userInfo;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              constraints: BoxConstraints(maxWidth: 230.w),
+              child: Text(
                 'Hello, ${userInfo.name}',
                 style: TextStyles.font24BlueBold,
+                overflow: TextOverflow.ellipsis,
               ),
-              verticalSpace(10),
-              Row(
+            ),
+            verticalSpace(5),
+            FittedBox(
+              child: Row(
                 children: [
                   SvgPicture.asset(AppSvgs.marker),
                   horizontalSpace(10),
                   Text(
                     userInfo.address,
                     style: TextStyles.font13DarkGrayRegular,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
-            ],
-          ),
-          InkWell(
-            onTap: () async {
-              await SupabaseAuthService().signOut();
-              context.pushNamedAndRemoveUntil(
-                Routes.signupScreen,
-                predicate: (route) => false,
-              );
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                color: ColorsManager.secondgray,
-              ),
-              width: 40.w,
-              height: 40.h,
-              child: Padding(
-                padding: EdgeInsets.all(10.r),
-                child: SvgPicture.asset(
-                  AppSvgs.user,
-                  // color: ColorsManager.darkBlue,
-                ),
+            ),
+          ],
+        ),
+        InkWell(
+          onTap: () async {
+            await SupabaseAuthService().signOut();
+            context.pushNamedAndRemoveUntil(
+              Routes.signupScreen,
+              predicate: (route) => false,
+            );
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.r),
+              color: ColorsManager.secondgray,
+            ),
+            width: 40.w,
+            height: 40.h,
+            child: Padding(
+              padding: EdgeInsets.all(10.r),
+              child: SvgPicture.asset(
+                AppSvgs.user,
+                // color: ColorsManager.darkBlue,
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

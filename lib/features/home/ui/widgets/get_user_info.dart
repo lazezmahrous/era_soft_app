@@ -33,7 +33,6 @@ class _GetUserInfoState extends State<GetUserInfo> {
       child: FutureBuilder<UserModel>(
         future: _userFuture,
         builder: (context, snapshot) {
-
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const LoadingUserInfoWidget();
           }
@@ -60,7 +59,6 @@ class _GetUserInfoState extends State<GetUserInfo> {
               style: TextStyle(color: Colors.black),
             ),
           );
-        
         },
       ),
     );
