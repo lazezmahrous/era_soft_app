@@ -21,7 +21,7 @@ class SearchWidget extends StatelessWidget {
         enabledBorder: InputBorder.none,
         focusedBorder: InputBorder.none,
         prefixIcon: Padding(
-          padding: EdgeInsets.all(12.w), 
+          padding: EdgeInsets.all(12.w),
           child: SvgPicture.asset(
             AppSvgs.search,
             width: 20.w,
