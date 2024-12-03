@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:t_shirt/core/constant/app_images.dart';
 import 'package:t_shirt/core/constant/app_svgs.dart';
-import 'package:t_shirt/core/helpers/spacing.dart';
 import 'package:t_shirt/core/theming/colors.dart';
 
 class ItemInfoWidget extends StatelessWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_shirt/core/theming/colors.dart';
-import 'package:t_shirt/features/login/ui/screens/login_screen.dart';
 
 import '../screens/home_screen.dart';
 
