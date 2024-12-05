@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:t_shirt/core/di/dependency_injection.dart';
 import 'package:t_shirt/core/routing/routers.dart';
+import 'package:t_shirt/features/adding_product/logic/adding_product_cubit.dart';
+import 'package:t_shirt/features/adding_product/ui/screens/adding_product_screen.dart';
 import 'package:t_shirt/features/home/ui/screens/home_screen.dart';
 import 'package:t_shirt/features/home/ui/widgets/bottom_navbar.dart';
 import 'package:t_shirt/features/login/logic/cubit/login_cubit.dart';
@@ -33,7 +35,6 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
-
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
@@ -41,6 +42,13 @@ class AppRouter {
       case Routes.bottomNavBar:
         return MaterialPageRoute(
           builder: (context) => const BottomNavBar(),
+        );
+      case Routes.addingProductScreen:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<AddingProductCubit>(),
+            child: const AddingProductScreen(),
+          ),
         );
       default:
         return MaterialPageRoute(

@@ -48,9 +48,9 @@ class ShowUserInfoWifget extends StatelessWidget {
         ),
         InkWell(
           onTap: () async {
-            await SupabaseAuthService().signOut();
+            // await SupabaseAuthService().signOut();
             context.pushNamedAndRemoveUntil(
-              Routes.signupScreen,
+              Routes.addingProductScreen,
               predicate: (route) => false,
             );
           },
