@@ -35,7 +35,7 @@ class OnBoardingButtonWidget extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 50.h),
                 child: InkWell(
                   onTap: () {
-                    context.pushNamed(Routes.signupScreen);
+                    context.pushReplacementNamed(Routes.signupScreen);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -6,14 +6,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../theming/colors.dart';
 
 class AppGradientButton extends StatelessWidget {
-  AppGradientButton(
-      {super.key,
-      required this.size,
-      required this.text,
-      required this.onPressed});
+  AppGradientButton({
+    super.key,
+    required this.size,
+    required this.text,
+    required this.onPressed,
+    this.gradient,
+  });
   final Size size;
   final String text;
   VoidCallback onPressed;
+  Gradient? gradient;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -28,15 +31,16 @@ class AppGradientButton extends StatelessWidget {
               offset: const Offset(0, 10),
             ),
           ],
-          gradient: LinearGradient(
-            colors: [
-              ColorsManager.secondBlueColor,
-              ColorsManager.mainBlue,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(25.r),
+          gradient: gradient ??
+              LinearGradient(
+                colors: [
+                  ColorsManager.mainOrange,
+                  ColorsManager.secondOrange,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+          borderRadius: BorderRadius.circular(15.r),
         ),
         width: size.width,
         height: size.height,

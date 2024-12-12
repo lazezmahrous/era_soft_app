@@ -49,9 +49,8 @@ class ShowUserInfoWifget extends StatelessWidget {
         InkWell(
           onTap: () async {
             // await SupabaseAuthService().signOut();
-            context.pushNamedAndRemoveUntil(
+            context.pushNamed(
               Routes.addingProductScreen,
-              predicate: (route) => false,
             );
           },
           child: Container(
@@ -63,10 +62,7 @@ class ShowUserInfoWifget extends StatelessWidget {
             height: 40.h,
             child: Padding(
               padding: EdgeInsets.all(10.r),
-              child: SvgPicture.asset(
-                AppSvgs.user,
-                // color: ColorsManager.darkBlue,
-              ),
+              child: const Icon(Icons.add),
             ),
           ),
         ),

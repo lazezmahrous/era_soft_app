@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:t_shirt/core/global%20widgets/app_gradient_button.dart';
 import 'package:t_shirt/core/global%20widgets/app_text_form_field.dart';
+import 'package:t_shirt/core/helpers/extensions.dart';
 import 'package:t_shirt/core/helpers/spacing.dart';
 import 'package:t_shirt/features/adding_product/logic/adding_product_cubit.dart';
-
-import '../../../../core/global widgets/app_pick_image.dart';
+import '../widgets/adding_product_listner.dart';
 import '../widgets/adding_size_data.dart';
 
 class AddingProductScreen extends StatefulWidget {
@@ -22,6 +22,14 @@ class _AddingProductScreenState extends State<AddingProductScreen> {
     final cubit = context.read<AddingProductCubit>();
 
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+            onPressed: () {
+              context.pop();
+            },
+            icon: const Icon(Icons.arrow_back)),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -114,6 +122,7 @@ class _AddingProductScreenState extends State<AddingProductScreen> {
                     },
                   ),
                   verticalSpace(10),
+                  const AddingProductListner(),
                 ],
               ),
             ),

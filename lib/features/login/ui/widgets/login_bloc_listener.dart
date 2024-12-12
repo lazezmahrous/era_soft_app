@@ -29,7 +29,7 @@ class _LoginBlocListenerState extends State<LoginBlocListener> {
           },
           success: () async {
             context.pushNamedAndRemoveUntil(
-              Routes.homeScreen,
+              Routes.bottomNavBar,
               arguments: null,
               predicate: (route) => false,
             );

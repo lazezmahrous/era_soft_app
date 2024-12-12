@@ -15,35 +15,32 @@ class LoginButton extends StatefulWidget {
 }
 
 class _LoginButtonState extends State<LoginButton> {
-  bool showLoading = false;
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginCubit, LoginState>(
-      listener: (context, state) {
-        state.whenOrNull(loading: () {
-          setState(() {
-            showLoading == !showLoading;
-          });
-        });
-      },
-      child: showLoading
-          ? const AppLoading()
-          : Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w),
-              child: AppGradientButton(
-                size: Size(double.infinity, 45.h),
-                text: 'Login',
-                onPressed: () async {
-                  if (context
-                      .read<LoginCubit>()
-                      .formKey
-                      .currentState!
-                      .validate()) {
-                    context.read<LoginCubit>().emitLoginStates();
-                  }
-                },
-              ),
+    return BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
+      return state.maybeWhen(
+        orElse: () {
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: AppGradientButton(
+              size: Size(double.infinity, 45.h),
+              text: 'Login',
+              onPressed: () async {
+                if (context
+                    .read<LoginCubit>()
+                    .formKey
+                    .currentState!
+                    .validate()) {
+                  context.read<LoginCubit>().emitLoginStates();
+                }
+              },
             ),
-    );
+          );
+        },
+        loading: () {
+          return const AppLoading();
+        },
+      );
+    });
   }
 }

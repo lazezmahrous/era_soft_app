@@ -9,7 +9,7 @@ class AppLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SpinKitPulse(
-      color: ColorsManager.secondBlueColor,
+      color: ColorsManager.mainOrange,
       size: 50.h,
     );
   }

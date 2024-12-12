@@ -31,7 +31,7 @@ class _SignUpBlocListenerState extends State<SignUpBlocListener> {
           }
         }, success: () async {
           context.pushNamedAndRemoveUntil(
-            Routes.homeScreen,
+            Routes.bottomNavBar,
             arguments: null,
             predicate: (route) => false,
           );

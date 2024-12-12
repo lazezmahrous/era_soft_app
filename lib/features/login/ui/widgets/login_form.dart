@@ -60,6 +60,8 @@ class _LoginFormState extends State<LoginForm> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid password';
+                } else if (value.length < 6) {
+                  return 'Password should be at lest 6 character';
                 }
                 return null;
               },

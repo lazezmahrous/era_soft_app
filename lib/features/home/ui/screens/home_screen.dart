@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:t_shirt/core/di/dependency_injection.dart';
 import 'package:t_shirt/core/helpers/spacing.dart';
+import 'package:t_shirt/features/get_product_data/data/logic/get_latest_product_cubit.dart';
 
+import '../../../get_product_data/ui/screens/get_latest_product_screen.dart';
 import '../widgets/home_app_bar.dart';
-import '../widgets/lastes_model_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -33,10 +36,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   SliverToBoxAdapter(
                     child: verticalSpace(10),
                   ),
-                  SliverPadding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
-                    sliver: const LastesModelWidget(),
+                  BlocProvider(
+                    create: (context) =>
+                        getIt<GetLatestProductCubit>()..emitGetLatestProducts(),
+                    child: const GetLatestProductScreen(),
                   ),
                 ],
               ),

@@ -53,7 +53,10 @@ class AddingProductCubit extends Cubit<AddingProductState> {
 
   void emitAddingProductStates() async {
     emit(const AddingProductState.loading());
+
     try {
+      print('productSizes:ssssss $productSizes');
+
       await _addingProductRepo.addingProduct(
           product: ProductRequestBody(
         name: nameController.text,
@@ -87,41 +90,5 @@ class AddingProductCubit extends Cubit<AddingProductState> {
     } else {
       selectedColors.add(color);
     }
-  }
-
-
-  void addSize(String size) {
-    if (!productSizes.containsKey(size)) {
-      productSizes[size] = {
-        'colors': {},
-      };
-    }
-    emit(ProductSizesUpdated(productdata: productSizes));
-  }
-
-  void addColor(String size, String color) {
-    if (!productSizes[size]!['colors'].containsKey(color)) {
-      productSizes[size]!['colors'][color] = {
-        'count': '',
-        'images': [],
-        'controller': TextEditingController(), // لكل لون
-      };
-    }
-    emit(ProductSizesUpdated(productdata: productSizes));
-  }
-
-  void updateColorCount(String size, String color, String count) {
-    productSizes[size]!['colors'][color]['count'] = count;
-    emit(ProductSizesUpdated(productdata: productSizes));
-  }
-
-  void addImageToColor(String size, String color, String imagePath) {
-    productSizes[size]!['colors'][color]['images'].add(imagePath);
-    emit(ProductSizesUpdated(productdata: productSizes));
-  }
-
-  void removeImageFromColor(String size, String color, String imagePath) {
-    productSizes[size]!['colors'][color]['images'].remove(imagePath);
-    emit(ProductSizesUpdated(productdata: productSizes));
   }
 }

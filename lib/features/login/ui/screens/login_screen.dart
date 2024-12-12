@@ -19,15 +19,15 @@ class LoginScreen extends StatelessWidget {
         leading: const AppBackButton(),
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Image.asset(
-                AppImages.onBoardingLogo,
-              ),
-              Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              AppImages.onBoardingLogo,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
@@ -36,15 +36,21 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              verticalSpace(10),
-              const LoginForm(),
-              verticalSpace(30),
-              const LoginButton(),
-              verticalSpace(20),
-              const DontHaveAccount(),
-              const LoginBlocListener(),
-            ],
-          ),
+            ),
+            verticalSpace(10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: const LoginForm(),
+            ),
+            verticalSpace(30),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: const LoginButton(),
+            ),
+            verticalSpace(20),
+            const DontHaveAccount(),
+            const LoginBlocListener(),
+          ],
         ),
       ),
     );

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:t_shirt/core/global%20widgets/app_loading.dart';
+import 'package:t_shirt/core/helpers/show_snack_bar.dart';
 import 'package:t_shirt/core/theming/colors.dart';
 import 'package:t_shirt/features/sign_up/logic/cubit/sign_up_cubit.dart';
 
@@ -24,6 +27,9 @@ class _GetAddressTextFieldWidgetState extends State<GetAddressTextFieldWidget> {
         state.whenOrNull(success: () {
           context.read<SignUpCubit>().addressController.text =
               context.read<GetAddressCubit>().adressController.text;
+        }, failure: () {
+          showSnackBarEror(
+              context, 'Failure Get Location, Try to Write By Hand');
         });
       },
       child: SignUpTextField(
@@ -31,21 +37,39 @@ class _GetAddressTextFieldWidgetState extends State<GetAddressTextFieldWidget> {
         appTextFormField: AppTextFormField(
           controller: context.read<GetAddressCubit>().adressController,
           hintText: 'address',
-          suffixIcon: IconButton(
-            onPressed: () {
-              context.read<GetAddressCubit>().emitGetAdressStates();
+          suffixIcon: BlocBuilder<GetAddressCubit, GetAddressState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                orElse: () {
+                  return IconButton(
+                    onPressed: () {
+                      context.read<GetAddressCubit>().emitGetAdressStates();
+                    },
+                    icon: SvgPicture.asset(
+                      AppSvgs.navigation,
+                      color: ColorsManager.mainOrange,
+                    ),
+                  );
+                },
+                loading: () {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      width: 10.w,
+                      height: 10.h,
+                      child: const AppLoading(),
+                    ),
+                  );
+                },
+              );
             },
-            icon: SvgPicture.asset(
-              AppSvgs.navigation,
-              color: ColorsManager.mainBlue,
-            ),
           ),
           keyboardType: TextInputType.text,
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter a valid Phone Number';
-            }
-            return null;
+              return 'Please enter your location';
+            } else
+              return null;
           },
         ),
       ),

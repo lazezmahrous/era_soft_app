@@ -11,6 +11,7 @@ class ColorsManager {
   static Color maingray = HexColor('#B5B5B5');
   static Color secondgray = const Color(0xffF5F5F5);
   static Color mainOrange = const Color(0xffFF660E);
+  static Color secondOrange = const Color(0xffF37335);
 
   static Color gray = HexColor('#757575');
   static Color lightGray = HexColor('#FF757575');

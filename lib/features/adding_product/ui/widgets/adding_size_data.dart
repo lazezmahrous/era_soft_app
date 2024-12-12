@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +9,7 @@ import '../../../../core/global widgets/app_gradient_button.dart';
 import '../../../../core/global widgets/app_pick_image.dart';
 import '../../../../core/global widgets/app_text_form_field.dart';
 import '../../../../core/helpers/spacing.dart';
+import '../../data/repos/adding_product_repo.dart';
 
 class AddingSizeData extends StatefulWidget {
   const AddingSizeData({super.key, required this.index});
@@ -21,7 +24,8 @@ class _AddingSizeDataState extends State<AddingSizeData> {
   Map<String, TextEditingController> colorControllers =
       {}; // خريطة لتخزين Controllers
   Map<String, String> colorsSelected = {};
-  List<String> modelsImages = [];
+  List<File> modelsImages = [];
+  List<String> images = [];
 
   @override
   Widget build(BuildContext context) {
@@ -111,9 +115,15 @@ class _AddingSizeDataState extends State<AddingSizeData> {
           AppGradientButton(
             size: Size(double.infinity, 50.h),
             text: 'AddSizeData',
-            onPressed: () {
+            onPressed: () async {
               print(modelsImages);
               print(colorsSelected);
+              final AddingProductRepo addingProductRepo = AddingProductRepo();
+              for (File element in modelsImages) {
+                String imageUploadedPath =
+                    await addingProductRepo.uploadProductImage(file: element);
+                images.addAll([imageUploadedPath]);
+              }
 
               final size = cubit.selectedSizes[widget.index!];
               if (!cubit.productSizes.containsKey(size)) {
@@ -124,10 +134,10 @@ class _AddingSizeDataState extends State<AddingSizeData> {
                 cubit.productSizes[size]!['colors'][colorName] = {
                   'count':
                       int.parse(colorControllers[colorName]!.text.toString()),
-                  'images': modelsImages,
+                  'images': images,
+                  'color_hex':colorValue,
                 };
               });
-
               print('Updated product sizes: ${cubit.productSizes}');
             },
           ),

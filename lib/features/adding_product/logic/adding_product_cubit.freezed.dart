@@ -22,8 +22,6 @@ mixin _$AddingProductState {
     required TResult Function() loading,
     required TResult Function() succses,
     required TResult Function() failure,
-    required TResult Function(Map<String, Map<String, dynamic>> productdata)
-        productSizesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,8 +30,6 @@ mixin _$AddingProductState {
     TResult? Function()? loading,
     TResult? Function()? succses,
     TResult? Function()? failure,
-    TResult? Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,8 +38,6 @@ mixin _$AddingProductState {
     TResult Function()? loading,
     TResult Function()? succses,
     TResult Function()? failure,
-    TResult Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +47,6 @@ mixin _$AddingProductState {
     required TResult Function(Loading value) loading,
     required TResult Function(Succses value) succses,
     required TResult Function(Failure value) failure,
-    required TResult Function(ProductSizesUpdated value) productSizesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +55,6 @@ mixin _$AddingProductState {
     TResult? Function(Loading value)? loading,
     TResult? Function(Succses value)? succses,
     TResult? Function(Failure value)? failure,
-    TResult? Function(ProductSizesUpdated value)? productSizesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,7 +63,6 @@ mixin _$AddingProductState {
     TResult Function(Loading value)? loading,
     TResult Function(Succses value)? succses,
     TResult Function(Failure value)? failure,
-    TResult Function(ProductSizesUpdated value)? productSizesUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,8 +134,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function() succses,
     required TResult Function() failure,
-    required TResult Function(Map<String, Map<String, dynamic>> productdata)
-        productSizesUpdated,
   }) {
     return initial();
   }
@@ -156,8 +145,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function()? succses,
     TResult? Function()? failure,
-    TResult? Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
   }) {
     return initial?.call();
   }
@@ -169,8 +156,6 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function()? succses,
     TResult Function()? failure,
-    TResult Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -186,7 +171,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(Loading value) loading,
     required TResult Function(Succses value) succses,
     required TResult Function(Failure value) failure,
-    required TResult Function(ProductSizesUpdated value) productSizesUpdated,
   }) {
     return initial(this);
   }
@@ -198,7 +182,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(Loading value)? loading,
     TResult? Function(Succses value)? succses,
     TResult? Function(Failure value)? failure,
-    TResult? Function(ProductSizesUpdated value)? productSizesUpdated,
   }) {
     return initial?.call(this);
   }
@@ -210,7 +193,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(Loading value)? loading,
     TResult Function(Succses value)? succses,
     TResult Function(Failure value)? failure,
-    TResult Function(ProductSizesUpdated value)? productSizesUpdated,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -269,8 +251,6 @@ class _$LoadingImpl implements Loading {
     required TResult Function() loading,
     required TResult Function() succses,
     required TResult Function() failure,
-    required TResult Function(Map<String, Map<String, dynamic>> productdata)
-        productSizesUpdated,
   }) {
     return loading();
   }
@@ -282,8 +262,6 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? loading,
     TResult? Function()? succses,
     TResult? Function()? failure,
-    TResult? Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
   }) {
     return loading?.call();
   }
@@ -295,8 +273,6 @@ class _$LoadingImpl implements Loading {
     TResult Function()? loading,
     TResult Function()? succses,
     TResult Function()? failure,
-    TResult Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -312,7 +288,6 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Loading value) loading,
     required TResult Function(Succses value) succses,
     required TResult Function(Failure value) failure,
-    required TResult Function(ProductSizesUpdated value) productSizesUpdated,
   }) {
     return loading(this);
   }
@@ -324,7 +299,6 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Loading value)? loading,
     TResult? Function(Succses value)? succses,
     TResult? Function(Failure value)? failure,
-    TResult? Function(ProductSizesUpdated value)? productSizesUpdated,
   }) {
     return loading?.call(this);
   }
@@ -336,7 +310,6 @@ class _$LoadingImpl implements Loading {
     TResult Function(Loading value)? loading,
     TResult Function(Succses value)? succses,
     TResult Function(Failure value)? failure,
-    TResult Function(ProductSizesUpdated value)? productSizesUpdated,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -395,8 +368,6 @@ class _$SuccsesImpl implements Succses {
     required TResult Function() loading,
     required TResult Function() succses,
     required TResult Function() failure,
-    required TResult Function(Map<String, Map<String, dynamic>> productdata)
-        productSizesUpdated,
   }) {
     return succses();
   }
@@ -408,8 +379,6 @@ class _$SuccsesImpl implements Succses {
     TResult? Function()? loading,
     TResult? Function()? succses,
     TResult? Function()? failure,
-    TResult? Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
   }) {
     return succses?.call();
   }
@@ -421,8 +390,6 @@ class _$SuccsesImpl implements Succses {
     TResult Function()? loading,
     TResult Function()? succses,
     TResult Function()? failure,
-    TResult Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
     required TResult orElse(),
   }) {
     if (succses != null) {
@@ -438,7 +405,6 @@ class _$SuccsesImpl implements Succses {
     required TResult Function(Loading value) loading,
     required TResult Function(Succses value) succses,
     required TResult Function(Failure value) failure,
-    required TResult Function(ProductSizesUpdated value) productSizesUpdated,
   }) {
     return succses(this);
   }
@@ -450,7 +416,6 @@ class _$SuccsesImpl implements Succses {
     TResult? Function(Loading value)? loading,
     TResult? Function(Succses value)? succses,
     TResult? Function(Failure value)? failure,
-    TResult? Function(ProductSizesUpdated value)? productSizesUpdated,
   }) {
     return succses?.call(this);
   }
@@ -462,7 +427,6 @@ class _$SuccsesImpl implements Succses {
     TResult Function(Loading value)? loading,
     TResult Function(Succses value)? succses,
     TResult Function(Failure value)? failure,
-    TResult Function(ProductSizesUpdated value)? productSizesUpdated,
     required TResult orElse(),
   }) {
     if (succses != null) {
@@ -521,8 +485,6 @@ class _$FailureImpl implements Failure {
     required TResult Function() loading,
     required TResult Function() succses,
     required TResult Function() failure,
-    required TResult Function(Map<String, Map<String, dynamic>> productdata)
-        productSizesUpdated,
   }) {
     return failure();
   }
@@ -534,8 +496,6 @@ class _$FailureImpl implements Failure {
     TResult? Function()? loading,
     TResult? Function()? succses,
     TResult? Function()? failure,
-    TResult? Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
   }) {
     return failure?.call();
   }
@@ -547,8 +507,6 @@ class _$FailureImpl implements Failure {
     TResult Function()? loading,
     TResult Function()? succses,
     TResult Function()? failure,
-    TResult Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -564,7 +522,6 @@ class _$FailureImpl implements Failure {
     required TResult Function(Loading value) loading,
     required TResult Function(Succses value) succses,
     required TResult Function(Failure value) failure,
-    required TResult Function(ProductSizesUpdated value) productSizesUpdated,
   }) {
     return failure(this);
   }
@@ -576,7 +533,6 @@ class _$FailureImpl implements Failure {
     TResult? Function(Loading value)? loading,
     TResult? Function(Succses value)? succses,
     TResult? Function(Failure value)? failure,
-    TResult? Function(ProductSizesUpdated value)? productSizesUpdated,
   }) {
     return failure?.call(this);
   }
@@ -588,7 +544,6 @@ class _$FailureImpl implements Failure {
     TResult Function(Loading value)? loading,
     TResult Function(Succses value)? succses,
     TResult Function(Failure value)? failure,
-    TResult Function(ProductSizesUpdated value)? productSizesUpdated,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -600,177 +555,4 @@ class _$FailureImpl implements Failure {
 
 abstract class Failure implements AddingProductState {
   const factory Failure() = _$FailureImpl;
-}
-
-/// @nodoc
-abstract class _$$ProductSizesUpdatedImplCopyWith<$Res> {
-  factory _$$ProductSizesUpdatedImplCopyWith(_$ProductSizesUpdatedImpl value,
-          $Res Function(_$ProductSizesUpdatedImpl) then) =
-      __$$ProductSizesUpdatedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Map<String, Map<String, dynamic>> productdata});
-}
-
-/// @nodoc
-class __$$ProductSizesUpdatedImplCopyWithImpl<$Res>
-    extends _$AddingProductStateCopyWithImpl<$Res, _$ProductSizesUpdatedImpl>
-    implements _$$ProductSizesUpdatedImplCopyWith<$Res> {
-  __$$ProductSizesUpdatedImplCopyWithImpl(_$ProductSizesUpdatedImpl _value,
-      $Res Function(_$ProductSizesUpdatedImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AddingProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? productdata = null,
-  }) {
-    return _then(_$ProductSizesUpdatedImpl(
-      productdata: null == productdata
-          ? _value._productdata
-          : productdata // ignore: cast_nullable_to_non_nullable
-              as Map<String, Map<String, dynamic>>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$ProductSizesUpdatedImpl implements ProductSizesUpdated {
-  const _$ProductSizesUpdatedImpl(
-      {required final Map<String, Map<String, dynamic>> productdata})
-      : _productdata = productdata;
-
-  final Map<String, Map<String, dynamic>> _productdata;
-  @override
-  Map<String, Map<String, dynamic>> get productdata {
-    if (_productdata is EqualUnmodifiableMapView) return _productdata;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_productdata);
-  }
-
-  @override
-  String toString() {
-    return 'AddingProductState.productSizesUpdated(productdata: $productdata)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ProductSizesUpdatedImpl &&
-            const DeepCollectionEquality()
-                .equals(other._productdata, _productdata));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_productdata));
-
-  /// Create a copy of AddingProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ProductSizesUpdatedImplCopyWith<_$ProductSizesUpdatedImpl> get copyWith =>
-      __$$ProductSizesUpdatedImplCopyWithImpl<_$ProductSizesUpdatedImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() succses,
-    required TResult Function() failure,
-    required TResult Function(Map<String, Map<String, dynamic>> productdata)
-        productSizesUpdated,
-  }) {
-    return productSizesUpdated(productdata);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? succses,
-    TResult? Function()? failure,
-    TResult? Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
-  }) {
-    return productSizesUpdated?.call(productdata);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? succses,
-    TResult Function()? failure,
-    TResult Function(Map<String, Map<String, dynamic>> productdata)?
-        productSizesUpdated,
-    required TResult orElse(),
-  }) {
-    if (productSizesUpdated != null) {
-      return productSizesUpdated(productdata);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(Loading value) loading,
-    required TResult Function(Succses value) succses,
-    required TResult Function(Failure value) failure,
-    required TResult Function(ProductSizesUpdated value) productSizesUpdated,
-  }) {
-    return productSizesUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(Loading value)? loading,
-    TResult? Function(Succses value)? succses,
-    TResult? Function(Failure value)? failure,
-    TResult? Function(ProductSizesUpdated value)? productSizesUpdated,
-  }) {
-    return productSizesUpdated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(Loading value)? loading,
-    TResult Function(Succses value)? succses,
-    TResult Function(Failure value)? failure,
-    TResult Function(ProductSizesUpdated value)? productSizesUpdated,
-    required TResult orElse(),
-  }) {
-    if (productSizesUpdated != null) {
-      return productSizesUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ProductSizesUpdated implements AddingProductState {
-  const factory ProductSizesUpdated(
-          {required final Map<String, Map<String, dynamic>> productdata}) =
-      _$ProductSizesUpdatedImpl;
-
-  Map<String, Map<String, dynamic>> get productdata;
-
-  /// Create a copy of AddingProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProductSizesUpdatedImplCopyWith<_$ProductSizesUpdatedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }

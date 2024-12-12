@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AppImagePickerWidget extends StatefulWidget {
-  final Function(String) onSelect;
+  final Function(File) onSelect;
   const AppImagePickerWidget({super.key, required this.onSelect});
 
   @override
@@ -22,7 +22,7 @@ class _AppImagePickerWidgetState extends State<AppImagePickerWidget> {
       setState(() {
         selectedImagePath = image.path;
       });
-      widget.onSelect(image.path);
+      widget.onSelect(File(image.path));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('No image selected.')),
@@ -34,7 +34,7 @@ class _AppImagePickerWidgetState extends State<AppImagePickerWidget> {
     setState(() {
       selectedImagePath = null;
     });
-    widget.onSelect(''); // Pass an empty string or null to indicate removal
+    widget.onSelect(File('')); // Pass an empty string or null to indicate removal
   }
 
   @override

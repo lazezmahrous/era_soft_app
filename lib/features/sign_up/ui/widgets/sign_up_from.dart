@@ -35,7 +35,7 @@ class _SignUpFromWidgetState extends State<SignUpFromWidget> {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid name';
                 } else if (value.length < 6) {
-                  return 'name is short';
+                  return 'name is short main length 6';
                 }
                 return null;
               },
@@ -68,6 +68,8 @@ class _SignUpFromWidgetState extends State<SignUpFromWidget> {
               keyboardType: TextInputType.phone,
               validator: (value) {
                 if (value == null || value.isEmpty) {
+                  return 'Please enter Phone Number';
+                } else if (!AppRegex.isPhoneVaild(value)) {
                   return 'Please enter a valid Phone Number';
                 }
                 return null;
@@ -104,6 +106,8 @@ class _SignUpFromWidgetState extends State<SignUpFromWidget> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid password';
+                } else if (value.length < 6) {
+                  return 'Password should be at lest 6 character';
                 }
                 return null;
               },
@@ -134,6 +138,9 @@ class _SignUpFromWidgetState extends State<SignUpFromWidget> {
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid password';
+                } else if (value !=
+                    context.read<SignUpCubit>().passwordController.text) {
+                  return 'The password is don\'t match';
                 }
                 return null;
               },

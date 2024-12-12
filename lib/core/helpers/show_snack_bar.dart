@@ -6,7 +6,7 @@ import 'spacing.dart';
 
 void showSnackBarEror(context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-    backgroundColor: ColorsManager.purple,
+    backgroundColor: Colors.red,
     content: Row(
       children: [
         const Icon(
